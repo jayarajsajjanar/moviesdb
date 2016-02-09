@@ -100,7 +100,7 @@ main_page_head = '''
 
 # The main page layout and title bar
 main_page_content = '''
-  <body>
+  <body style="background-color:#C0C0C0">
     <!-- Trailer Video Modal -->
     <div class="modal" id="trailer">
       <div class="modal-dialog">
@@ -119,12 +119,13 @@ main_page_content = '''
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+            <!--  <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a> -->
+            <img src="cooltext164556482546821.gif" height="34">
           </div>
         </div>
       </div>
     </div>
-    <div class="container"> 
+    <div class="container" > 
         <div class="row">
       {movie_tiles}  
         </div>  
@@ -138,6 +139,7 @@ main_page_content = '''
 movie_tile_content = '''
     <div class="col-md-6 col-lg-4">
         <div class="col-lg-2"></div>
+        <!-- This implements the "Like" button. When the button is clicked, likefunction() is called. An alert window is displayed and the like button is disabled -->
         <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id={movies_id}>
         
         <img src="{poster_image_url}" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">

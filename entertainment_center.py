@@ -1,5 +1,8 @@
+#The other two files/classes are imported to be able to use their properties/methods.
 import media
 import fresh_tomatoes
+
+#Instances of movie class are created. Parameterised constructor is used for instantiating.
 
 The_Shawshank_Redemption    = media.movie("Shawshank Redemption",
 											"https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
