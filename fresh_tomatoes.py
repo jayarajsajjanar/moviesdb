@@ -75,13 +75,15 @@ main_page_head = '''
               'frameborder': 0
             }));
         });
+        //The below animation function is disabled to implement other functionality.
         // Animate in the movies when the page loads
         /*$(document).ready(function () {
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
         });*/
-
+            //The below function is called when "Like" button is clicked. An acknowledgement that the button was pressed is given.
+            //The button is disabled subsequently.
          function likefunction(id_par)
             {
                 alert("Hi:) Thanks for liking!!");
