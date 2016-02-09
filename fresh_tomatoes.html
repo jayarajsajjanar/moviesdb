@@ -61,7 +61,7 @@
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=0&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
               'type': 'text-html',
@@ -70,11 +70,23 @@
             }));
         });
         // Animate in the movies when the page loads
-        $(document).ready(function () {
+        /*$(document).ready(function () {
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
-        });
+        });*/
+
+         function likefunction(id_par)
+            {
+                alert("Hi:) Thanks for liking!!");
+    
+               //alert( document.getElementById(id_par).disabled);
+               document.getElementById(id_par).disabled =true;
+               document.getElementById(id_par).value="You have liked this!";
+               //alert( document.getElementById(id_par).disabled);
+
+            }
+
     </script>
 </head>
 
@@ -102,38 +114,64 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container"> 
+        <div class="row">
       
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="6hB3S9bIaco" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg" width="220" height="342">
-    <h2>Shawshank Redemption</h2>
-</div>
+    <div class="col-md-6 col-lg-4">
+        <div class="col-lg-2"></div>
+        <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id=tsr>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="6hB3S9bIaco" data-toggle="modal" data-target="#trailer">
+        <div class="col-lg-3"></div>
+        <h2 class="text-center">Shawshank Redemption</h2>
+    </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="sY1S34973zA" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" width="220" height="342">
-    <h2>The Godfather</h2>
-</div>
+    <div class="col-md-6 col-lg-4">
+        <div class="col-lg-2"></div>
+        <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id=tgf>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="sY1S34973zA" data-toggle="modal" data-target="#trailer">
+        <div class="col-lg-3"></div>
+        <h2 class="text-center">The Godfather</h2>
+    </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="qJr92K_hKl0" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Godfather_part_ii.jpg" width="220" height="342">
-    <h2>The Godfather Part ii</h2>
-</div>
+    <div class="col-md-6 col-lg-4">
+        <div class="col-lg-2"></div>
+        <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id=tgft>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Godfather_part_ii.jpg" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="qJr92K_hKl0" data-toggle="modal" data-target="#trailer">
+        <div class="col-lg-3"></div>
+        <h2 class="text-center">The Godfather Part Two</h2>
+    </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="EXeTwQWrcwY" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg" width="220" height="342">
-    <h2>The Dark Knight</h2>
-</div>
+    <div class="col-md-6 col-lg-4">
+        <div class="col-lg-2"></div>
+        <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id=tdk>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="EXeTwQWrcwY" data-toggle="modal" data-target="#trailer">
+        <div class="col-lg-3"></div>
+        <h2 class="text-center">The Dark Knight</h2>
+    </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="s7EdQ4FqbhY" data-toggle="modal" data-target="#trailer">
-    <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Pulp_Fiction_cover.jpg" width="220" height="342">
-    <h2>Pulp Fiction</h2>
-</div>
+    <div class="col-md-6 col-lg-4">
+        <div class="col-lg-2"></div>
+        <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id=pf>
+        
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Pulp_Fiction_cover.jpg" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="s7EdQ4FqbhY" data-toggle="modal" data-target="#trailer">
+        <div class="col-lg-3"></div>
+        <h2 class="text-center">Pulp Fiction</h2>
+    </div>
 
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="fSG38tk6TpI" data-toggle="modal" data-target="#trailer">
-    <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcTDnld_1CpP-iESMfN_iAF0yEOYAhv0gX7F3RKIf47oQIua_vAS" width="220" height="342">
-    <h2>12 Angry Men</h2>
-</div>
-
+    <div class="col-md-6 col-lg-4">
+        <div class="col-lg-2"></div>
+        <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id=tam>
+        
+        <img src="http://t0.gstatic.com/images?q=tbn:ANd9GcTDnld_1CpP-iESMfN_iAF0yEOYAhv0gX7F3RKIf47oQIua_vAS" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="fSG38tk6TpI" data-toggle="modal" data-target="#trailer">
+        <div class="col-lg-3"></div>
+        <h2 class="text-center">Twelve Angry Men</h2>
+    </div>
+  
+        </div>  
     </div>
   </body>
 </html>

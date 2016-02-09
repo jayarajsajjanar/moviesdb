@@ -67,7 +67,7 @@ main_page_head = '''
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=0&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
               'type': 'text-html',
@@ -76,11 +76,23 @@ main_page_head = '''
             }));
         });
         // Animate in the movies when the page loads
-        $(document).ready(function () {
+        /*$(document).ready(function () {
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
-        });
+        });*/
+
+         function likefunction(id_par)
+            {
+                alert("Hi:) Thanks for liking!!");
+    
+               //alert( document.getElementById(id_par).disabled);
+               document.getElementById(id_par).disabled =true;
+               document.getElementById(id_par).value="You have liked this!";
+               //alert( document.getElementById(id_par).disabled);
+
+            }
+
     </script>
 </head>
 '''
@@ -112,8 +124,10 @@ main_page_content = '''
         </div>
       </div>
     </div>
-    <div class="container">
-      {movie_tiles}
+    <div class="container"> 
+        <div class="row">
+      {movie_tiles}  
+        </div>  
     </div>
   </body>
 </html>
@@ -122,10 +136,14 @@ main_page_content = '''
 
 # A single movie entry html template
 movie_tile_content = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
-    <h2>{movie_title}</h2>
-</div>
+    <div class="col-md-6 col-lg-4">
+        <div class="col-lg-2"></div>
+        <input class="col-md-6 col-lg-8 btn btn-primary active" onclick="likefunction(id);" width="10" height="4" type="button" value="Like" id={movies_id}>
+        
+        <img src="{poster_image_url}" width="200" height="342" class="movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+        <div class="col-lg-3"></div>
+        <h2 class="text-center">{movie_title}</h2>
+    </div>
 '''
 
 
@@ -145,7 +163,9 @@ def create_movie_tiles_content(movies):
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movies_id=movie.movie_id
+
         )
     return content
 
